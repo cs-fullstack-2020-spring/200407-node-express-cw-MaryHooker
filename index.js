@@ -27,11 +27,24 @@ app.get('/student/:id',(req,res)=>{
     //function to render student in index position
     studentArray.forEach((student,index)=>{
         if(index == req.params.id){
-            res.send(`The student whose index position matches is ${student.name} and their avaerage grade is ${student.average}%`);
-            
+            res.send(`The student whose index position matches is ${student.name} and their avaerage grade is ${student.average}%`); 
         }
     })
 })
+
+//Route and function to display all students from array
+app.get('/allStudents',(req,res)=>{
+    studentArray.map((student,index)=>{
+        // if(index == 0,1,2){
+            res.send(`Student: ${student.name}, Average: ${student.average}%`);
+        // } else if(index == 1){
+        //     res.send(`Student: ${student.name}, Average: ${student.average}%`);
+        // } else if(index == 2){
+        //     res.send(`Student: ${student.name}, Average: ${student.average}%`);
+        
+     } )})
+// })
+// })
 
 //Call the listen method on app/place a port and function as parameters/sanity in console
 app.listen(7000,(req,res)=>{
