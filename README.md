@@ -1,7 +1,8 @@
 # 20-04-07 Node and Express CW
 
 #### Attempt this assignment without looking back at your notes first
-
+Check out my comments in you index.js file. +1 for turning in a working file and leaving your broken code commented out so I could follow your logic.
+### Score : 4/5
 ### Set Up
 - Create a JS file called `index.js`
 - Generate the `package.json` file by running `npm init` in the terminal (accept all defaults)

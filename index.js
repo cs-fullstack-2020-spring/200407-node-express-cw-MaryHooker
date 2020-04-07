@@ -34,8 +34,11 @@ app.get('/student/:id',(req,res)=>{
 
 //Route and function to display all students from array
 app.get('/allStudents',(req,res)=>{
+    // !! using a for each and building a string would have been your strongest/most familiar approach here
     studentArray.map((student,index)=>{
+        // !! conditionals can't check for multiple conditions separated by a comma
         // if(index == 0,1,2){
+            // !! Can't do a res.send() inside of a map bc it will run multiple times
             res.send(`Student: ${student.name}, Average: ${student.average}%`);
         // } else if(index == 1){
         //     res.send(`Student: ${student.name}, Average: ${student.average}%`);
