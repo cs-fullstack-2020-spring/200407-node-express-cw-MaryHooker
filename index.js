@@ -9,16 +9,31 @@ let app = express();
 //Define a variable equal to my name
 let name = 'Mary';
 
-//Call the listen method on app/place a port and function as parameters/sanity in console
-app.listen(7000,(req,res)=>{
-    console.log("Listening on port 7000")
-})
+//Define an array of student objects with 2 props
+let studentArray = [{name:'Mary',average: 80},{name:'Charlie',average:60},{name:'Lucy',average:100}]
 
 //Define Root Path
 app.get('/',(req,res)=>{
     res.send("Welcome to my node & express server");
 })
 
+//Route to display name
 app.get('/displayName',(req,res)=>{
     res.send(`My name is ${name}`);
+})
+
+//Route to display student by index position
+app.get('/student/:id',(req,res)=>{
+    //function to render student in index position
+    studentArray.forEach((student,index)=>{
+        if(index == req.params.id){
+            res.send(`The student whose index position matches is ${student.name} and their avaerage grade is ${student.average}%`);
+            
+        }
+    })
+})
+
+//Call the listen method on app/place a port and function as parameters/sanity in console
+app.listen(7000,(req,res)=>{
+    console.log("Listening on port 7000")
 })
