@@ -27,7 +27,7 @@ app.get('/student/:id', (req, res) => {
     //function to render student in index position
     studentArray.forEach((student) => {
 
-        let students =
+        let students = 
             (`The student whose index position matches is ${student.name} and their confidence is ${student.average}%`);
     }
     )
